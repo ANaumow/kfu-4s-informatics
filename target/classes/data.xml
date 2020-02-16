@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<country name="russia" priority="1">
+    <region name="tatarstan" priority="1">
+        <city name="kazan" priority="3">
+            <street name="leningradskaya" priority="4">
+                <house name="32" priority="9"/>
+                <house name="31" priority="7"/>
+            </street>
+        </city>
+        <district name="laishevsky" priority="2">
+            <city name="laishevo" priority="2"/>
+        </district>
+    </region>
+    <city name="spb" priority="5"/>
+    <city name="moscow" priority="5"/>
+</country>
