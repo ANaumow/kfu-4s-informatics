@@ -1,22 +1,22 @@
-package ru.naumow.geo.iterator;
+package ru.naumow.iterator;
 
-import ru.naumow.geo.GeoNode;
+import ru.naumow.tree.Node;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class IteratorBfs implements Iterator<GeoNode> {
+public class IteratorBfs implements Iterator<Node> {
 
-    private Queue<GeoNode> queue = new LinkedList<>();
+    private Queue<Node> queue = new LinkedList<>();
 
-    public IteratorBfs(GeoNode root) {
+    public IteratorBfs(Node root) {
         queue.add(root);
     }
 
     @Override
-    public GeoNode next() {
-        GeoNode node = queue.remove();
+    public Node next() {
+        Node node = queue.remove();
         queue.addAll(node.getChildren());
         return node;
     }

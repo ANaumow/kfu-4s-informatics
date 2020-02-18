@@ -1,4 +1,4 @@
-package ru.naumow.geo.interpretator.core.anotation;
+package ru.naumow.interpretator.core.anotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

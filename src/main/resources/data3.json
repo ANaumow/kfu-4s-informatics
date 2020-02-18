@@ -1,0 +1,65 @@
+{
+  "name": "russia",
+  "type": "country",
+  "priority": 10,
+  "children": [
+    {
+      "name": "tatarstan",
+      "type": "region",
+      "priority": 1,
+      "children": [
+        {
+          "name": "kazan",
+          "type": "city",
+          "priority": 3,
+          "children": [
+            {
+              "name": "leningradskaya",
+              "type": "street",
+              "priority": 4,
+              "children": [
+                {
+                  "name": "32",
+                  "type": "house",
+                  "priority": 9,
+                  "children": []
+                },
+                {
+                  "name": "31",
+                  "type": "house",
+                  "priority": 7,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "laishevsky",
+          "type": "district",
+          "priority": 2,
+          "children": [
+            {
+              "name": "laishevo",
+              "type": "city",
+              "priority": 2,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "spb",
+      "type": "city",
+      "priority": 5,
+      "children": []
+    },
+    {
+      "name": "moscow",
+      "type": "city",
+      "priority": 5,
+      "children": []
+    }
+  ]
+}

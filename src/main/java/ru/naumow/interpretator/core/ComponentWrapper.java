@@ -1,7 +1,7 @@
-package ru.naumow.geo.interpretator.core;
+package ru.naumow.interpretator.core;
 
-import ru.naumow.geo.interpretator.Context;
-import ru.naumow.geo.interpretator.core.anotation.CmdMapping;
+import ru.naumow.interpretator.Context;
+import ru.naumow.interpretator.core.anotation.CmdMapping;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

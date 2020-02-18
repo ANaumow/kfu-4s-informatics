@@ -1,15 +1,15 @@
-package ru.naumow.geo.iterator;
+package ru.naumow.iterator;
 
-import ru.naumow.geo.GeoNode;
+import ru.naumow.tree.Node;
 
 import java.util.*;
 
-public class IteratorDfs implements Iterator<GeoNode> {
+public class IteratorDfs implements Iterator<Node> {
 
-    private Stack<Queue<GeoNode>> stack = new Stack<>();
+    private Stack<Queue<Node>> stack = new Stack<>();
 
-    public IteratorDfs(GeoNode root) {
-        Queue<GeoNode> queue = newQueue();
+    public IteratorDfs(Node root) {
+        Queue<Node> queue = newQueue();
         queue.add(root);
         stack.add(queue);
         addChildrenDeeply(root);
@@ -21,9 +21,9 @@ public class IteratorDfs implements Iterator<GeoNode> {
     }
 
     @Override
-    public GeoNode next() {
-        Queue<GeoNode> queue = stack.peek();
-        GeoNode n = queue.remove();
+    public Node next() {
+        Queue<Node> queue = stack.peek();
+        Node n = queue.remove();
         if (queue.isEmpty()) {
             stack.pop();
         } else {
@@ -32,17 +32,17 @@ public class IteratorDfs implements Iterator<GeoNode> {
         return n;
     }
 
-    private void addChildrenDeeply(GeoNode cur) {
-        List<GeoNode> children;
+    private void addChildrenDeeply(Node cur) {
+        List<Node> children;
         while (!(children = cur.getChildren()).isEmpty()) {
-            Queue<GeoNode> q = newQueue();
+            Queue<Node> q = newQueue();
             q.addAll(children);
             stack.add(q);
             cur = q.peek();
         }
     }
 
-    private Queue<GeoNode> newQueue() {
+    private Queue<Node> newQueue() {
         return new LinkedList<>();
     }
 

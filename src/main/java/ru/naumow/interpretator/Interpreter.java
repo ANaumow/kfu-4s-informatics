@@ -1,17 +1,17 @@
-package ru.naumow.geo.interpretator;
+package ru.naumow.interpretator;
 
-import ru.naumow.geo.interpretator.core.ComponentWrapper;
+import ru.naumow.interpretator.core.ComponentWrapper;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
-public class CommandExecutor {
+public class Interpreter {
 
     private Context context;
 
     private List<ComponentWrapper> componentWrapperList;
 
-    public CommandExecutor(Context context, Object... components) {
+    public Interpreter(Context context, Object... components) {
         this.context = context;
         this.componentWrapperList = new ArrayList<>();
         for (Object component : components) {
@@ -20,15 +20,17 @@ public class CommandExecutor {
     }
 
     public void execute(String command) {
-        for (ComponentWrapper component : componentWrapperList) {
-            try {
+        try {
+            for (ComponentWrapper component : componentWrapperList) {
                 if (component.respond(context, command)) {
                     return;
                 }
-            } catch (InvocationTargetException | IllegalAccessException e) {
-                throw new IllegalStateException(e);
             }
+            throw new IllegalStateException("Unrecognizable");
+        } catch (InvocationTargetException | IllegalAccessException | IllegalStateException e) {
+            System.out.println(e.getCause().getMessage());
         }
+
     }
 
 }
