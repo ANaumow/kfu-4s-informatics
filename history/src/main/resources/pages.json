@@ -1,0 +1,37 @@
+{
+  "pages": [
+    {
+      "name": "page1",
+      "links": [
+        "page2",
+        "page3"
+      ],
+      "textAdv": [
+        {
+          "pos": 1,
+          "adv": "page2"
+        }
+      ],
+      "videoAdv": [
+        {
+          "pos": 2,
+          "adv": "page3"
+        }
+      ]
+    },
+    {
+      "name": "page2",
+      "links": [
+        "page1"
+      ],
+      "textAdv": [],
+      "videoAdv": []
+    },
+    {
+      "name": "page3",
+      "links": [],
+      "textAdv": [],
+      "videoAdv": []
+    }
+  ]
+}
