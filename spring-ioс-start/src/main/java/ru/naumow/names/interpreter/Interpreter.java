@@ -39,7 +39,6 @@ public class Interpreter {
 
         Method[] methods = this.core.getClass().getDeclaredMethods();
         for (Method method : methods) {
-            System.out.println(method);
             if (method.isAnnotationPresent(CmdMapping.class)) {
                 String expected = method.getAnnotation(CmdMapping.class).value();
                 if (curCommand.equals(expected)) {

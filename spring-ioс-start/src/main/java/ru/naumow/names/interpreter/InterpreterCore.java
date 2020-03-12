@@ -11,7 +11,6 @@ public class InterpreterCore {
     // add <имя>
     @CmdMapping("add")
     private void goTo(Environment env, String[] args) {
-        System.out.println("add");
         CommandUtil.requireSize(args, 1);
         String name = args[0];
         NameEntryRepository nameStorage = env.getAttribute("nameStorage", NameEntryRepository.class);
@@ -26,7 +25,6 @@ public class InterpreterCore {
     // out
     @CmdMapping("out")
     private void out(Environment env, String[] args) {
-        System.out.println("out");
         CommandUtil.requireSize(args, 0);
         NameEntryRepository nameStorage = env.getAttribute("nameStorage", NameEntryRepository.class);
         List<NameEntry> nameEntries = new ArrayList<>();
