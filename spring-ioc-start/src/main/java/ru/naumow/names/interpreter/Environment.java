@@ -1,11 +1,8 @@
 package ru.naumow.names.interpreter;
 
-import org.springframework.stereotype.Component;
-
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
 public class Environment {
 
     private Map<String, Object> attributes = new HashMap<>();
